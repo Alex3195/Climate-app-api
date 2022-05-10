@@ -1,0 +1,40 @@
+2022-05-09 09:40:38 - [35m[restartedMain][0;39m [34mINFO [0;39m uz.alex.climateappapi.ClimateAppApiApplication.logStarting - Starting ClimateAppApiApplication using Java 11.0.13 on DESKTOP-NBGB857 with PID 14520 (D:\projects\java\climate-app-api\target\classes started by Alex in D:\projects\java\climate-app-api)
+2022-05-09 09:40:38 - [35m[restartedMain][0;39m [34mINFO [0;39m uz.alex.climateappapi.ClimateAppApiApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+2022-05-09 09:40:40 - [35m[restartedMain][0;39m [34mINFO [0;39m org.apache.catalina.core.StandardService.log - Starting service [Tomcat]
+2022-05-09 09:40:40 - [35m[restartedMain][0;39m [34mINFO [0;39m org.apache.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-09 09:40:40 - [35m[restartedMain][0;39m [34mINFO [0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2022-05-09 09:40:41 - [35m[restartedMain][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+2022-05-09 09:40:41 - [35m[restartedMain][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+2022-05-09 09:40:43 - [35m[restartedMain][0;39m [34mINFO [0;39m uz.alex.climateappapi.ClimateAppApiApplication.logStarted - Started ClimateAppApiApplication in 5.313 seconds (JVM running for 7.969)
+2022-05-09 09:41:01 - [35m[SpringApplicationShutdownHook][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+2022-05-09 09:41:01 - [35m[SpringApplicationShutdownHook][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+2022-05-09 09:58:31 - [35m[restartedMain][0;39m [34mINFO [0;39m uz.alex.climateappapi.ClimateAppApiApplication.logStarting - Starting ClimateAppApiApplication using Java 11.0.13 on DESKTOP-NBGB857 with PID 15544 (D:\projects\java\climate-app-api\target\classes started by Alex in D:\projects\java\climate-app-api)
+2022-05-09 09:58:31 - [35m[restartedMain][0;39m [34mINFO [0;39m uz.alex.climateappapi.ClimateAppApiApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+2022-05-09 09:58:33 - [35m[restartedMain][0;39m [34mINFO [0;39m org.apache.catalina.core.StandardService.log - Starting service [Tomcat]
+2022-05-09 09:58:33 - [35m[restartedMain][0;39m [34mINFO [0;39m org.apache.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-09 09:58:33 - [35m[restartedMain][0;39m [34mINFO [0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2022-05-09 09:58:34 - [35m[restartedMain][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+2022-05-09 09:58:34 - [35m[restartedMain][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+2022-05-09 09:58:36 - [35m[restartedMain][0;39m [34mINFO [0;39m uz.alex.climateappapi.ClimateAppApiApplication.logStarted - Started ClimateAppApiApplication in 4.921 seconds (JVM running for 6.47)
+2022-05-09 10:10:27 - [35m[SpringApplicationShutdownHook][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+2022-05-09 10:10:27 - [35m[SpringApplicationShutdownHook][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+2022-05-09 10:11:42 - [35m[restartedMain][0;39m [34mINFO [0;39m uz.alex.climateappapi.ClimateAppApiApplication.logStarting - Starting ClimateAppApiApplication using Java 11.0.13 on DESKTOP-NBGB857 with PID 7300 (D:\projects\java\climate-app-api\target\classes started by Alex in D:\projects\java\climate-app-api)
+2022-05-09 10:11:42 - [35m[restartedMain][0;39m [34mINFO [0;39m uz.alex.climateappapi.ClimateAppApiApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+2022-05-09 10:11:44 - [35m[restartedMain][0;39m [34mINFO [0;39m org.apache.catalina.core.StandardService.log - Starting service [Tomcat]
+2022-05-09 10:11:44 - [35m[restartedMain][0;39m [34mINFO [0;39m org.apache.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-09 10:11:44 - [35m[restartedMain][0;39m [34mINFO [0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2022-05-09 10:11:45 - [35m[restartedMain][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+2022-05-09 10:11:45 - [35m[restartedMain][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+2022-05-09 10:11:47 - [35m[restartedMain][0;39m [34mINFO [0;39m uz.alex.climateappapi.ClimateAppApiApplication.logStarted - Started ClimateAppApiApplication in 5.747 seconds (JVM running for 7.294)
+2022-05-09 10:31:54 - [35m[SpringApplicationShutdownHook][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+2022-05-09 10:31:54 - [35m[SpringApplicationShutdownHook][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
+2022-05-09 10:32:02 - [35m[restartedMain][0;39m [34mINFO [0;39m uz.alex.climateappapi.ClimateAppApiApplication.logStarting - Starting ClimateAppApiApplication using Java 11.0.13 on DESKTOP-NBGB857 with PID 3108 (D:\projects\java\climate-app-api\target\classes started by Alex in D:\projects\java\climate-app-api)
+2022-05-09 10:32:02 - [35m[restartedMain][0;39m [34mINFO [0;39m uz.alex.climateappapi.ClimateAppApiApplication.logStartupProfileInfo - The following 1 profile is active: "dev"
+2022-05-09 10:32:03 - [35m[restartedMain][0;39m [34mINFO [0;39m org.apache.catalina.core.StandardService.log - Starting service [Tomcat]
+2022-05-09 10:32:03 - [35m[restartedMain][0;39m [34mINFO [0;39m org.apache.catalina.core.StandardEngine.log - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-05-09 10:32:03 - [35m[restartedMain][0;39m [34mINFO [0;39m org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+2022-05-09 10:32:04 - [35m[restartedMain][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Starting...
+2022-05-09 10:32:04 - [35m[restartedMain][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.getConnection - HikariPool-1 - Start completed.
+2022-05-09 10:32:06 - [35m[restartedMain][0;39m [34mINFO [0;39m uz.alex.climateappapi.ClimateAppApiApplication.logStarted - Started ClimateAppApiApplication in 4.931 seconds (JVM running for 6.299)
+2022-05-09 10:35:01 - [35m[SpringApplicationShutdownHook][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown initiated...
+2022-05-09 10:35:01 - [35m[SpringApplicationShutdownHook][0;39m [34mINFO [0;39m com.zaxxer.hikari.HikariDataSource.close - HikariPool-1 - Shutdown completed.
