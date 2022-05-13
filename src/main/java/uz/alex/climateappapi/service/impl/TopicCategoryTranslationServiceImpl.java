@@ -9,7 +9,7 @@ import uz.alex.climateappapi.service.TopicCategoryTranslationService;
 
 @Service
 @RequiredArgsConstructor
-public class AdminTopicCategoryTranslationServiceImpl implements TopicCategoryTranslationService {
+public class TopicCategoryTranslationServiceImpl implements TopicCategoryTranslationService {
 
     private final TopicCategoryTranslationRepository translationRepository;
 

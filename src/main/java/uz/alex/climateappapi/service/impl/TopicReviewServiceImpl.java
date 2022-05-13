@@ -20,7 +20,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class AdminTopicReviewServiceImpl implements TopicReviewService {
+public class TopicReviewServiceImpl implements TopicReviewService {
 
     private final TopicReviewRepository topicReviewRepository;
 
@@ -82,7 +82,7 @@ public class AdminTopicReviewServiceImpl implements TopicReviewService {
     public ApiResponse archivingTopicReviewById(Long id) {
         Optional<TopicReviewEntity> byId = topicReviewRepository.findById(id);
         if (byId.isPresent()) {
-            byId.get().setStatus(Status.DELETED);
+            byId.get().setStatus(Status.ARCHIVING);
             topicReviewRepository.save(byId.get());
             return ApiResponse.ok();
         } else {

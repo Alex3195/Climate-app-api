@@ -19,9 +19,6 @@ public class TopicCategoryEntity extends BaseServerModifierEntity {
     @Column(name = "displayIconId")
     private Long displayIconId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "displayIconId", insertable = false, updatable = false)
-    private ImageFileEntity imageFileEntity;
 
     @Column(name = "parentTopicCategoryId")
     private Long parentTopicCategoryId;

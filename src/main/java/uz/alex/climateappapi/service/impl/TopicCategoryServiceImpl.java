@@ -21,7 +21,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class AdminTopicCategoryServiceImpl implements TopicCategoryService {
+public class TopicCategoryServiceImpl implements TopicCategoryService {
 
     private final TopicCategoryRepository topicCategoryRepository;
 
@@ -37,7 +37,6 @@ public class AdminTopicCategoryServiceImpl implements TopicCategoryService {
             dto.setDefaultTitle(dtoCategory.getDefaultTitle());
             dto.setSubTitle(dtoCategory.getSubTitle());
             dto.setParentTopicCategoryId(dtoCategory.getParentId());
-            dto.setDisplayIconId(dtoCategory.getDisplayIconId());
             dto.setParentTitle(dtoCategory.getParentTitle());
             setAllList.add(dto);
         }
@@ -49,7 +48,6 @@ public class AdminTopicCategoryServiceImpl implements TopicCategoryService {
     public ApiResponse saveTopicCategory(TopicCategoryDto topicCategoryDto) {
         TopicCategoryEntity entity = new TopicCategoryEntity();
         entity.setTitle(topicCategoryDto.getDefaultTitle());
-        entity.setDisplayIconId(topicCategoryDto.getDisplayIconId());
         entity.setParentTopicCategoryId(topicCategoryDto.getParentTopicCategoryId());
         entity.setCreatedDate(LocalDateTime.now());
         entity.setCreatedBy(Utils.getUserId());
@@ -88,7 +86,6 @@ public class AdminTopicCategoryServiceImpl implements TopicCategoryService {
             dto.setDefaultTitle(dtoTopicCategory.getDefaultTitle());
             dto.setSubTitle(dtoTopicCategory.getSubTitle());
             dto.setParentTopicCategoryId(dtoTopicCategory.getParentId());
-            dto.setDisplayIconId(dtoTopicCategory.getDisplayIconId());
             dto.setParentTitle(dtoTopicCategory.getParentTitle());
             setAllListById.add(dto);
         }
@@ -107,7 +104,6 @@ public class AdminTopicCategoryServiceImpl implements TopicCategoryService {
             dto.setTitle(getById.get().getTitle());
             dto.setDefaultTitle(getById.get().getDefaultTitle());
             dto.setSubTitle(getById.get().getSubTitle());
-            dto.setDisplayIconId(getById.get().getDisplayIconId());
             dto.setParentTopicCategoryId(getById.get().getParentId());
             dto.setParentTitle(getById.get().getParentTitle());
             return ApiResponse.success(true, dto);
@@ -122,7 +118,7 @@ public class AdminTopicCategoryServiceImpl implements TopicCategoryService {
     public ApiResponse archivingTopicCategoryId(Long id) {
         Optional<TopicCategoryEntity> byId = topicCategoryRepository.findById(id);
         if (byId.isPresent()) {
-            byId.get().setStatus(Status.DELETED);
+            byId.get().setStatus(Status.ARCHIVING);
             topicCategoryRepository.save(byId.get());
             return ApiResponse.ok();
         } else {

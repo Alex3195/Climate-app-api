@@ -10,7 +10,7 @@ import javax.transaction.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class AdminTopicTranslationServiceImpl implements TopicTranslationService {
+public class TopicTranslationServiceImpl implements TopicTranslationService {
 
     private final TopicTranslationRepository translationRepository;
 

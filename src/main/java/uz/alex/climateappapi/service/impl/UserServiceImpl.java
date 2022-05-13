@@ -74,7 +74,7 @@ public class UserServiceImpl implements UserService {
     public ApiResponse archivingUserById(Long id) {
         Optional<UserEntity> byId = userRepository.findById(id);
         if (byId.isPresent()) {
-            byId.get().setStatus(Status.DELETED);
+            byId.get().setStatus(Status.ARCHIVING);
             userRepository.save(byId.get());
             return ApiResponse.ok();
         } else {

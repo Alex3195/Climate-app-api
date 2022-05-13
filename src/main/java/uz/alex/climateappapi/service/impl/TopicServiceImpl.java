@@ -21,7 +21,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class AdminTopicServiceImpl implements TopicService {
+public class TopicServiceImpl implements TopicService {
 
     private final TopicRepository topicRepository;
 
@@ -37,8 +37,7 @@ public class AdminTopicServiceImpl implements TopicService {
             dto.setTitle(dtoTopic.getTitle());
             dto.setSubTitle(dtoTopic.getSubTitle());
             dto.setContent(dtoTopic.getContent());
-            dto.setTopicThemeId(dtoTopic.getTopicThemeId());
-            dto.setThemeTitle(dtoTopic.getThemeTitle());
+            dto.setTopicFileId(dtoTopic.getTopicFileId());
             setAllList.add(dto);
         }
         return setAllList;
@@ -87,7 +86,8 @@ public class AdminTopicServiceImpl implements TopicService {
             dto.setTitle(topicOptional.get().getTitle());
             dto.setSubTitle(topicOptional.get().getSubTitle());
             dto.setContent(topicOptional.get().getContent());
-            dto.setTopicThemeId(topicOptional.get().getTopicThemeId());
+            dto.setTopicFileId(topicOptional.get().getTopicFileId());
+            dto.setCategoryId(topicOptional.get().getCategoryId());
             return ApiResponse.success(true, dto);
         } else {
             return ApiResponse.success(false, "Такой ID не существует");
@@ -99,7 +99,7 @@ public class AdminTopicServiceImpl implements TopicService {
     public ApiResponse archivingTopicById(Long id) {
         Optional<TopicEntity> byId = topicRepository.findById(id);
         if (byId.isPresent()) {
-            byId.get().setStatus(Status.DELETED);
+            byId.get().setStatus(Status.ARCHIVING);
             topicRepository.save(byId.get());
             return ApiResponse.ok();
         } else {

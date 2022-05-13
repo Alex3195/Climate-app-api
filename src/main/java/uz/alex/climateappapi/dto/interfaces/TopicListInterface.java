@@ -11,7 +11,8 @@ public interface TopicListInterface {
 
     String getContent();
 
-    Long getTopicThemeId();
+    Long getTopicFileId();
 
-    String getThemeTitle();
+    Long getCategoryId();
+
 }

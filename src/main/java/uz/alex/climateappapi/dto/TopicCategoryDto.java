@@ -12,7 +12,6 @@ public class TopicCategoryDto implements Serializable {
     private String defaultTitle;
     private String title;
     private String subTitle;
-    private Long displayIconId;
     private Long parentTopicCategoryId;
     private String parentTitle;
 }

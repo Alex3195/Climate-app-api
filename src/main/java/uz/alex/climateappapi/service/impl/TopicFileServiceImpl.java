@@ -33,7 +33,7 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-public class AdminTopicFileServiceImpl implements TopicFileService {
+public class TopicFileServiceImpl implements TopicFileService {
 
     private final TopicFileRepository topicFileRepository;
 

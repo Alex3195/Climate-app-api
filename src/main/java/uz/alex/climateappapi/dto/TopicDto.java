@@ -13,6 +13,6 @@ public class TopicDto extends BaseServerDto {
     private String defaultTitle;
     private String subTitle;
     private String content;
-    private Long topicThemeId;
-    private String themeTitle;
+    private Long topicFileId;
+    private Long categoryId;
 }

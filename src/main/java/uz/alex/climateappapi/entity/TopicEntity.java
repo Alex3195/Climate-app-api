@@ -18,9 +18,16 @@ public class TopicEntity extends BaseServerModifierEntity {
     @Column(name = "topicFileId")
     private Long topicFileId;
 
+    @Column(name = "categoryId")
+    private Long categoryId;
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "topicThemeId", insertable = false, updatable = false)
+    @JoinColumn(name = "topicFileId", insertable = false, updatable = false)
     private TopicFileEntity topicFileEntity;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categoryId", insertable = false, updatable = false)
+    private TopicCategoryEntity topicCategoryEntity;
 
     public TopicDto getDto() {
         TopicDto dto = new TopicDto();
