@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import uz.alex.climateappapi.config.utils.BackendSecurityUtils;
+import uz.alex.climateappapi.constants.Role;
 import uz.alex.climateappapi.constants.Status;
 import uz.alex.climateappapi.entity.UserEntity;
 import uz.alex.climateappapi.dto.UserDto;
@@ -37,6 +38,7 @@ public class UserServiceImpl implements UserService {
         userEntity.setStatus(Status.CREATED);
         userEntity.setCreatedDate(LocalDateTime.now());
         userEntity.setCreatedBy(BackendSecurityUtils.getUserId());
+        userEntity.setRole(Role.USER);
         userEntity = userRepository.save(userEntity);
         return ApiResponse.success(true, userEntity.getDto());
     }

@@ -36,6 +36,11 @@ public class AuthenticationController {
         return ResponseEntity.status(HttpStatus.OK).body(token);
     }
 
+    @PostMapping("/register")
+    public ResponseEntity<?> createUser(@RequestBody UserDto dto) {
+        return ResponseEntity.status(HttpStatus.OK).body(userServiceImpl.add(dto));
+    }
+
     @GetMapping("/login{logout}")
     public void logoutAndDeleteUserToken(@PathVariable("logout") String logout) {
         //@Todo: service need to be written

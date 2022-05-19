@@ -64,7 +64,11 @@ public class TopicCategoryServiceImpl implements TopicCategoryService {
         if (categoryEntityOptional.isPresent()) {
             BeanUtils.copyProperties(dto, categoryEntityOptional.get(), "createdDate", "createdBy");
             categoryEntityOptional.get().setTitle(dto.getDefaultTitle());
-            categoryEntityOptional.get().setParentTopicCategoryId(dto.getParentTopicCategoryId() != 0 ? dto.getParentTopicCategoryId() : null);
+            if (dto.getParentTopicCategoryId() != null) {
+                categoryEntityOptional.get().setParentTopicCategoryId(dto.getParentTopicCategoryId());
+            } else {
+                categoryEntityOptional.get().setParentTopicCategoryId(null);
+            }
             categoryEntityOptional.get().setUpdatedDate(LocalDateTime.now());
             categoryEntityOptional.get().setModifiedBy(Utils.getUserId());
             topicCategoryRepository.save(categoryEntityOptional.get());

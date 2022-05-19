@@ -16,8 +16,6 @@ public class UserDto extends BaseServerModifierDto {
 
     private String password;
 
-    private String newPassword;
-
     @NotNull
     private Role role;
 

@@ -2,6 +2,7 @@ package uz.alex.climateappapi.service.impl;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 import uz.alex.climateappapi.constants.Status;
 import uz.alex.climateappapi.dto.TopicDto;
@@ -38,6 +39,7 @@ public class TopicServiceImpl implements TopicService {
             dto.setSubTitle(dtoTopic.getSubTitle());
             dto.setContent(dtoTopic.getContent());
             dto.setTopicFileId(dtoTopic.getTopicFileId());
+            dto.setParentTitle(dtoTopic.getParentTitle());
             setAllList.add(dto);
         }
         return setAllList;
@@ -45,6 +47,7 @@ public class TopicServiceImpl implements TopicService {
 
     @Override
     @Transactional
+    @Modifying
     public ApiResponse saveTopic(TopicDto dto) {
         TopicEntity entity = new TopicEntity();
         entity.setTitle(dto.getDefaultTitle());
@@ -56,6 +59,7 @@ public class TopicServiceImpl implements TopicService {
 
     @Override
     @Transactional
+    @Modifying
     public ApiResponse editTopic(TopicDto dto) {
         if (dto.getId() == null)
             return ApiResponse.success(false, "Этот ID не должно быть пустым");

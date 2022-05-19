@@ -16,8 +16,8 @@ public class TopicCategoryEntity extends BaseServerModifierEntity {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "displayIconId")
-    private Long displayIconId;
+    @Column(name = "subtitle")
+    private String subtitle;
 
 
     @Column(name = "parentTopicCategoryId")
@@ -29,7 +29,10 @@ public class TopicCategoryEntity extends BaseServerModifierEntity {
 
     public TopicCategoryDto getDto(){
         TopicCategoryDto topicCategoryDto = new TopicCategoryDto();
-        BeanUtils.copyProperties(this, topicCategoryDto);
+        topicCategoryDto.setId(getId());
+        topicCategoryDto.setTitle(getTitle());
+        topicCategoryDto.setSubTitle(getSubtitle());
+        topicCategoryDto.setParentTopicCategoryId(getParentTopicCategoryId());
         if (this.title != null)
             topicCategoryDto.setDefaultTitle(this.title);
         return topicCategoryDto;

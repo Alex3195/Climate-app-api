@@ -57,7 +57,8 @@ public class BackendSecurityConfigAdapter extends WebSecurityConfigurerAdapter {
                         configurer
                                 .antMatchers(
                                         "/error",
-                                        "/login"
+                                        "/login",
+                                        "/register"
                                 )
                                 .permitAll()
                                 .anyRequest()

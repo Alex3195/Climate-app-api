@@ -1,6 +1,7 @@
 package uz.alex.climateappapi.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 import uz.alex.climateappapi.dto.TopicDto;
 import uz.alex.climateappapi.repository.TopicTranslationRepository;
@@ -15,6 +16,7 @@ public class TopicTranslationServiceImpl implements TopicTranslationService {
     private final TopicTranslationRepository translationRepository;
 
     @Override
+    @Modifying
     @Transactional
     public void storeTopicTranslation(TopicDto topicDto, String locale) {
         translationRepository.insert_update_topic_translation(topicDto.getId(),topicDto.getTitle(),topicDto.getSubTitle(),topicDto.getContent(),locale.trim());

@@ -11,14 +11,17 @@ import java.util.List;
 import java.util.Optional;
 
 public interface TopicRepository extends JpaRepository<TopicEntity, Long>, JpaSpecificationExecutor<TopicEntity> {
-    @Query(value = "select t.id                                                                                       as id,\n" +
-            "       t.title                                                                                    as defaultTitle,\n" +
-            "       CASE WHEN (tt.locale is null or tt.locale = :locale) THEN tt.title ELSE NULL END           as title,\n" +
-            "       CASE WHEN (tt.locale is null or tt.locale = :locale) THEN tt.sub_title ELSE NULL END       as subTitle,\n" +
-            "       CASE WHEN (tt.locale is null or tt.locale = :locale) THEN tt.content ELSE NULL END         as content\n" +
+    @Query(value = "select t.id                                                                                 as id,\n" +
+            "       t.title                                                                              as defaultTitle,\n" +
+            "       CASE WHEN (tt.locale is null or tt.locale = :locale) THEN tt.title ELSE NULL END     as title,\n" +
+            "       CASE WHEN (tt.locale is null or tt.locale = :locale) THEN tt.sub_title ELSE NULL END as subTitle,\n" +
+            "       CASE WHEN (tt.locale is null or tt.locale = :locale) THEN tt.content ELSE NULL END   as content,\n" +
+            "       CASE WHEN (tct.locale is null or tct.locale = :locale) THEN tct.title ELSE NULL END   as parentTitle\n" +
             "from topic_entity t\n" +
             "         left join topic_translation tt on tt.topic_id = t.id and (tt.locale is null or tt.locale = :locale)\n" +
-            "where (t.status is null or t.status <> 'ARCHIVING');\n", nativeQuery = true)
+            "         left join topic_category_entity tce on tce.id = t.category_id\n" +
+            "         left join topic_category_translation tct on tct.topic_category_id = t.category_id\n" +
+            "where (t.status is null or t.status <> 'ARCHIVING')", nativeQuery = true)
     List<TopicListInterface> list_topic(@Param("locale") String locale);
 
     @Query(value = "select t.id as id,\n" +

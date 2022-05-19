@@ -15,4 +15,6 @@ public interface TopicListInterface {
 
     Long getCategoryId();
 
+    String getParentTitle();
+
 }
