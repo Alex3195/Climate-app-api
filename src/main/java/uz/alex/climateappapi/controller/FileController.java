@@ -46,4 +46,20 @@ public class FileController {
         } else
             return ApiResponse.success(true, new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY));
     }
+
+    @GetMapping(value = {"/load-param-template"})
+    public @ResponseBody
+    ApiResponse getParamTemplate(HttpServletResponse response) {
+        Resource file = fileService.loadResource();
+        if (file != null) {
+            try {
+                response.setHeader(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"");
+                FileCopyUtils.copy(file.getInputStream(), response.getOutputStream());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return ApiResponse.ok();
+        } else
+            return ApiResponse.success(true, new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY));
+    }
 }

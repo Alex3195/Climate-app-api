@@ -66,7 +66,7 @@ public class FileServiceImpl implements FileService {
     @Override
     @Transactional
     public Long saveFile(MultipartFile file, String filename) {
-        filename  = StringUtils.isEmpty(filename) ? StringUtils.cleanPath(file.getOriginalFilename()) : filename;
+        filename = StringUtils.isEmpty(filename) ? StringUtils.cleanPath(file.getOriginalFilename()) : filename;
         String extension = "";
         int i = filename.lastIndexOf('.');
         if (i > 0) {
@@ -125,6 +125,26 @@ public class FileServiceImpl implements FileService {
                 Resource resource = new UrlResource(new File(imagePath).toURI());
                 if (resource.exists() || resource.isReadable()) {
                     pathCache.put(id, imagePath);
+                    return resource;
+                }
+            } else {
+                throw new FileNotFoundException("С таким ИД рисунка не сущесвует в директории");
+            }
+        } catch (MalformedURLException e) {
+            throw new FileNotFoundException("С таким ИД рисунка не сущесвует в директории");
+        }
+        return null;
+    }
+
+    @Override
+    @Transactional
+    public Resource loadResource() {
+        try {
+            String imagePath = "src/main/resources/temperature params/temperature initial data.zip";
+
+            if (!StringUtils.isEmpty(imagePath)) {
+                Resource resource = new UrlResource(new File(imagePath).toURI());
+                if (resource.exists() || resource.isReadable()) {
                     return resource;
                 }
             } else {

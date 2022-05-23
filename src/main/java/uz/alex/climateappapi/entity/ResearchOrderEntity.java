@@ -5,8 +5,11 @@ import lombok.Setter;
 import uz.alex.climateappapi.constants.ProcessStatus;
 import uz.alex.climateappapi.dto.ResearcherOrderDto;
 import uz.alex.climateappapi.entity.base.BaseServerModifierEntity;
+import uz.alex.climateappapi.utils.DateUtil;
 
 import javax.persistence.*;
+import java.sql.Date;
+import java.time.ZoneId;
 
 @Entity
 @Getter
@@ -41,6 +44,7 @@ public class ResearchOrderEntity extends BaseServerModifierEntity {
         dto.setParamCode(getParamCode());
         dto.setFileId(getFileId());
         dto.setProcessStatus(getProcessStatus());
+        dto.setDateTime(DateUtil.format(Date.from(getCreatedDate().atZone(ZoneId.systemDefault()).toInstant())));
         return dto;
     }
 }

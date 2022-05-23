@@ -2,6 +2,7 @@ package uz.alex.climateappapi.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import uz.alex.climateappapi.datatable.FilterForm;
 import uz.alex.climateappapi.dto.ResearcherOrderDto;
 import uz.alex.climateappapi.model.ApiResponse;
 import uz.alex.climateappapi.service.ResearcherOrderService;
@@ -12,14 +13,14 @@ import uz.alex.climateappapi.service.ResearcherOrderService;
 public class ResearcherOrderController {
     private final ResearcherOrderService service;
 
-    @GetMapping("/list")
-    public ApiResponse getOrders() {
-        return ApiResponse.success(true, service.getOrdersByUser());
+    @PostMapping("/list")
+    public ApiResponse getOrders(@RequestBody FilterForm form) {
+        return ApiResponse.success(true, service.getOrdersBetweenDateByUser(form));
     }
 
-    @GetMapping("/{from}/{to}")
-    public ApiResponse getOrdersBetweenDate(@PathVariable("from") String fromDate, @PathVariable("to") String toDate) {
-        return ApiResponse.success(true, service.getOrdersBetweenData(fromDate, toDate));
+    @GetMapping("/")
+    public ApiResponse getOrdersBetweenDate() {
+        return ApiResponse.success(true, service.getAllOrders());
     }
 
     @PostMapping("/")

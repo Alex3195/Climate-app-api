@@ -11,4 +11,6 @@ public interface FileService {
     void deleteFile(Long id);
 
     Resource loadAsResource(Long id);
+    Resource loadResource();
+
 }

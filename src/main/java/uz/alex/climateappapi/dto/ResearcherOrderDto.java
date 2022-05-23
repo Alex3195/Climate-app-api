@@ -13,4 +13,5 @@ public class ResearcherOrderDto extends BaseServerModifierDto {
     private String paramCode;
     private Long fileId;
     private ProcessStatus processStatus;
+    private String dateTime;
 }
